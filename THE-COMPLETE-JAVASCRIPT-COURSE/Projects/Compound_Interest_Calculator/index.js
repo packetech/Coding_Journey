@@ -1,7 +1,7 @@
 const prompt = require('prompt-sync')()
 
 // The is a compound interest calculator that prompts the user for imputs and subsequently calculates the compound interest
-// Created by Ndifreke OKORIE
+// Created by Ndifreke OKORIE: first project
 
 
 // let initialAmount = 1000
