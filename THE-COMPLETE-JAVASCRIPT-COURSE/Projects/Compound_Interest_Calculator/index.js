@@ -12,7 +12,8 @@ const prompt = require('prompt-sync')()
 
 // step 1 - defines a function to be used in calculating the final value of the compound interest
 
-function compoundInterest(initialAmount, monthlyContribution, numberOfYears, interestRate) {
+const compoundInterest = (initialAmount, monthlyContribution, numberOfYears, interestRate) => {
+
     let total = initialAmount
     let annualContribution = monthlyContribution * 12
 
@@ -25,12 +26,12 @@ function compoundInterest(initialAmount, monthlyContribution, numberOfYears, int
 
 // step 2 - defines a function to calculate the regular amount saved without interest compounding (i.e. this can be used to see the effect that compounding has had)
 
-function calculateRegular(initialAmount, monthlyContribution, numberOfYears) {
+const calculateRegular = (initialAmount, monthlyContribution, numberOfYears) => {
     let regularValue = initialAmount + monthlyContribution * 12 * numberOfYears
     return regularValue.toFixed(2)
 }
 // step 3 - creates a run function to prompt user for all required inputs needed to calculate the final amounts
-function run() {
+const run = () => {
     let initialAmount = parseInt(prompt('Type your initial investment amount (eur): '))
     let monthlyContribution = parseInt(prompt('Type your monthly contribution (eur): '))
     let numberOfYears = parseInt(prompt('Type your number of investment years: '))
@@ -41,7 +42,7 @@ function run() {
 
 // step 4 - inside the function in step 3, make a print statement using a templete literal string that gives the financial breakdown
 
-function printOutput(initialAmount, monthlyContribution, numberOfYears, interestRate) {
+const printOutput = (initialAmount, monthlyContribution, numberOfYears, interestRate) => {
     let finalValue = compoundInterest(initialAmount, monthlyContribution, numberOfYears, interestRate)
 
     let valueWithoutCompounding = calculateRegular(initialAmount, monthlyContribution, numberOfYears)
