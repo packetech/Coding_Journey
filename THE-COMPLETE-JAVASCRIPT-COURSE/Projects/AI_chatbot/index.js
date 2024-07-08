@@ -47,7 +47,7 @@ async function sendPrompt() {
       axios
         .request(options)
         .then((response) => {
-          console.log(response.data)
+          console.log('\n',response.data.cohere.generated_text)
           getUserInput()
         })
         .catch((error) => {
@@ -67,9 +67,10 @@ async function run() {
 
 function getUserInput() {
 
-    if ( userMessages = prompt('How would you like to respond? ')) {
+    if ( userMessages = prompt(console.log("=======\n", 'How would you like to respond? '))) {
         sendPrompt()
     }
+    
     else if (userMessages === 0) {
       exit
     } 
